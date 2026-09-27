@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta de Estudiantes - Instituto San Agustín</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+            <img src="./img/Gorro_Magnific(ex Freepik).png" alt="Logo Instituto San Agustín" class="logo-img">
+            </a>
+            <div class="institution-title">
+                <h1>Instituto San Agustín</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="mensajes.html">Mensajes</a></li>
+                <li><a href="perfil.html">Tu Perfil</a></li>
+                <li><a href="index.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <aside>
+            <h3>ADMINISTRACIÓN +</h3>
+            <ul>
+                <li><a href="registro_estudiantes.html">Gestión de Estudiantes</a></li>
+                <li><a href="carga_notas.html">Calificaciones</a></li>
+                <li><a href="alta_estudiantes.html" class="active">Alta de estudiantes</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <div class="card">
+                <h2 >ALTA DE ESTUDIANTES</h2>
+                
+                <form action="#" method="POST" class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="apellido">Apellido/s:</label>
+                        <input type="text" id="apellido" class="input-rounded" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="nombre">Nombre/s:</label>
+                        <input type="text" id="nombre" class="input-rounded" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dni">DNI:</label>
+                        <input type="text" id="dni" class="input-rounded" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha_nac">Fecha de Nacimiento:</label>
+                        <input type="date" id="fecha_nac" class="input-rounded" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="lugar_nac">Lugar de Nacimiento:</label>
+                        <input type="text" id="lugar_nac" class="input-rounded">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" id="direccion" class="input-rounded">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" class="input-rounded">
+                    </div>
+
+                    <div class="form-group full-width" >
+                        <h3>Contacto de urgencia:</h3>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="urgencia">Nombre y teléfono:</label>
+                        <input type="text" id="urgencia" class="input-rounded">
+                    </div>
+
+                    <div class="form-group full-width" >
+                        <button type="submit" class="btn">Guardar Estudiante</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Instituto San Agustín. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

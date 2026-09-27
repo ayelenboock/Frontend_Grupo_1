@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión General de Estudiantes - Instituto San Agustín</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+            <img src="./img/Gorro_Magnific(ex Freepik).png" alt="Logo Instituto San Agustín" class="logo-img">
+            </a>
+            <div class="institution-title">
+                <h1>Instituto San Agustín</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="mensajes.html">Mensajes</a></li>
+                <li><a href="perfil.html">Tu Perfil</a></li>
+                <li><a href="index.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <aside>
+            <h3>ADMINISTRACIÓN +</h3>
+            <ul>
+                <li><a href="registro_estudiantes.html" class="active">Gestión de Estudiantes</a></li>
+                <li><a href="carga_notas.html">Calificaciones</a></li>
+                <li><a href="alta_estudiantes.html">Alta de estudiantes</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <div class="card">
+                <h2>REGISTRO Y GESTIÓN DE ESTUDIANTES</h2>
+                <p style="margin-bottom: 1rem;">Consulta, edición, eliminación y cálculo de promedios académicos por materias.</p>
+
+                <!-- Sección de Búsqueda -->
+                <form class="search-bar" action="#" method="GET">
+                    <input type="text" class="input-rounded" placeholder="Buscar estudiante por Nombre, Apellido o DNI...">
+                    <button type="submit" class="btn">Buscar</button>
+                </form>
+
+                <!-- Tabla de Gestión General -->
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>DNI</th>
+                                <th>Estudiante</th>
+                                <th>Materia</th>
+                                <th>Nota 1</th>
+                                <th>Nota 2</th>
+                                <th>Nota 3</th>
+                                <th>Promedio</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>12345678</td>
+                                <td>Gómez, María</td>
+                                <td>Programación Frontend</td>
+                                <td>8.00</td>
+                                <td>9.00</td>
+                                <td>10.00</td>
+                                <td><strong>9.00</strong></td>
+                                <td>
+                                    <button >Editar</button>
+                                    <button >Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>87654321</td>
+                                <td>Pérez, Juan</td>
+                                <td>Base de Datos</td>
+                                <td>6.00</td>
+                                <td>7.00</td>
+                                <td>5.00</td>
+                                <td><strong>6.00</strong></td>
+                                <td>
+                                    <button >Editar</button>
+                                    <button >Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6" ><strong>Promedio General de la Materia:</strong></td>
+                                <td colspan="2"><strong>7.50</strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Instituto San Agustín. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
