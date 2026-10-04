@@ -14,6 +14,10 @@ body {
   min-height: 100vh;
 }
 
+button, input, select {
+  font-family: inherit;
+}
+
 /* Encabezado General / Header */
 header {
   background-color: #4a148c;
@@ -158,6 +162,10 @@ main {
   text-align: center;
 }
 
+.auth-container h2 {
+  margin-bottom: 1.5rem;
+}
+
 .form-group {
   margin-bottom: 1.2rem;
   text-align: left;
@@ -239,4 +247,36 @@ footer {
   font-size: 0.85rem;
   color: #555;
   margin-top: auto;
+}
+
+/*Mensaje de error en Login*/
+.mensaje-error {
+  color: #c62828;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/*Diseño responsivo*/
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  aside {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .full-width {
+    grid-column: span 1;
+  }
+  header {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .search-bar {
+    flex-direction: column;
+  }
 }
