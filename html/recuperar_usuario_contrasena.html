@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto San Agustín - Recuperar usuario / contraseña</title>
+    
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <main class="auth-container">
+        <div class="card">
+            <img src="../img/logo_gorro.png" alt="Logo Instituto San Agustín" class="logo-img" >
+            <h2 >INSTITUTO SAN AGUSTÍN</h2>
+            <h3> Recuperar Usuario/Contraseña </h3>
+            <p id="textorec"> Ingresá tu número de documento y se te enviará un mail con instrucciones para reestablecer tu contraseña </p>
+            
+            <form id="form-recuperar">
+                <div class="form-group">
+                    <label for="tipodocumento">TIPO DE DOCUMENTO</label>
+                    <select id="tipodocumento" class="input-rounded">
+                        <option value="dni"> DNI </option>
+                        <option value="pasaporte"> PASAPORTE </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="numero">N°</label>
+                    <input type="text" id="numero" class="input-rounded" placeholder="N°">
+                </div>
+                
+                <button type="submit" class="btn btn-block" >ENVIAR</button>
+            </form>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Instituto San Agustín. Todos los derechos reservados.</p>
+        <p class="creditos">
+            Logo: imagen de <a href="https://www.freepik.com" target="_blank"
+        rel="noopener"> Magnific (ex Freepik)</a>
+        </p>
+    </footer>
+
+    <script src="../js/alert_recuperacion.js"></script>
+
+</body>
+</html>

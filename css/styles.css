@@ -166,8 +166,17 @@ main {
   margin-bottom: 1.5rem;
 }
 
+/*Formular Para Recuperar Usuario/Contraseña */
+#textorec {
+  max-width: 400px;
+  margin: 1rem auto;
+  text-align: justify;
+  margin-inline: 0.5rem;
+  color: #555;
+}
+
 .form-group {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.8rem;
   text-align: left;
 }
 
@@ -191,6 +200,7 @@ main {
   border-color: #7c43bd;
   box-shadow: 0 0 5px rgba(124, 67, 189, 0.4);
 }
+
 
 /* Tablas */
 .table-container {

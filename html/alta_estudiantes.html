@@ -41,30 +41,30 @@
             <div class="card">
                 <h2 >ALTA DE ESTUDIANTES</h2>
                 
-                <form action="#" method="POST" class="form-grid">
+                <form id="form-alta" action="#" method="POST" class="form-grid">
                     <div class="form-group full-width">
                         <label for="apellido">Apellido/s:</label>
-                        <input type="text" id="apellido" class="input-rounded" required>
+                        <input type="text" id="apellido" class="input-rounded" >
                     </div>
 
                     <div class="form-group full-width">
                         <label for="nombre">Nombre/s:</label>
-                        <input type="text" id="nombre" class="input-rounded" required>
+                        <input type="text" id="nombre" class="input-rounded" >
                     </div>
 
                     <div class="form-group">
                         <label for="dni">DNI:</label>
-                        <input type="text" id="dni" class="input-rounded" required>
+                        <input type="text" id="dni" class="input-rounded" >
                     </div>
 
                     <div class="form-group">
-                        <label for="fecha_nac">Fecha de Nacimiento:</label>
-                        <input type="date" id="fecha_nac" class="input-rounded" required>
+                        <label for="fechaNac">Fecha de Nacimiento:</label>
+                        <input type="date" id="fechaNac" class="input-rounded" >
                     </div>
 
                     <div class="form-group full-width">
-                        <label for="lugar_nac">Lugar de Nacimiento:</label>
-                        <input type="text" id="lugar_nac" class="input-rounded">
+                        <label for="lugarNac">Lugar de Nacimiento:</label>
+                        <input type="text" id="lugarNac" class="input-rounded">
                     </div>
 
                     <div class="form-group full-width">
@@ -87,6 +87,7 @@
                     </div>
 
                     <div class="form-group full-width" >
+                        <p id="mensaje-error" class="mensaje-error"></p>
                         <button type="submit" class="btn">Guardar Estudiante</button>
                     </div>
                 </form>
@@ -101,6 +102,7 @@
         rel="noopener"> Magnific (ex Freepik)</a>
         </p>
     </footer>
+    <script src="../js/validacion_alta_estudiantes.js"></script>
 
 </body>
 </html>
