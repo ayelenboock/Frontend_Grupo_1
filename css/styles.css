@@ -250,6 +250,31 @@ tr:nth-child(even) {
   flex: 1;
 }
 
+/* Filas de días y horarios en el alta de materias */
+.fila-horario {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.fila-horario label {
+  width: 120px;
+}
+
+/* Formato recuadro filas días y horarios materias*/
+fieldset {
+  border: 2px solid #4a148c;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+}
+
+fieldset legend {
+  color: #4a148c;
+  font-weight: bold;
+  padding: 0 0.5rem;
+}
+
 footer {
   text-align: center;
   padding: 1rem;

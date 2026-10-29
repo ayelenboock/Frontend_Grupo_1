@@ -13,6 +13,32 @@ if (formAlta) {
     const inputContactoUrg = document.getElementById("urgencia");
     const mensajeError = document.getElementById("mensaje-error");
 
+
+    //Para cuando se edita, si la dirección trae ?indice= se edita un estudiante existente
+    const parametros = new URLSearchParams(window.location.search);
+    const indiceEditar = parametros.get("indice");
+
+    if (indiceEditar !== null) {
+        const estudiantes = JSON.parse(localStorage.getItem("estudiantes")) || [];
+
+        const estudiante = estudiantes[indiceEditar];
+
+        if (estudiante) {
+            inputApellido.value = estudiante.apellido;
+            inputNombre.value = estudiante.nombre;
+            inputDni.value = estudiante.dni;
+            inputFechaNac.value = estudiante.fechaNac;
+            inputLugarNac.value = estudiante.lugarNac;
+            inputDireccion.value = estudiante.direccion;
+            inputTelefono.value = estudiante.telefono;
+            inputContactoUrg.value = estudiante.urgencia;
+
+            document.getElementById("titulo-alta").textContent = "EDITAR ESTUDIANTE";
+            document.getElementById("btn-guardar").textContent = "Guardar cambios";
+        }
+            
+    }
+
     formAlta.addEventListener("submit", function (event) {
         event.preventDefault();
         const apellido = inputApellido.value.trim();
@@ -48,11 +74,23 @@ if (formAlta) {
 
     const estudiantes = JSON.parse(localStorage.getItem("estudiantes")) || [];
 
-        estudiantes.push(estudiante);
-
+        //para no duplicar campos cuando se edita el estudiantes:
+        if (indiceEditar !== null) {
+            estudiantes[indiceEditar] = estudiante;
+        } else {
+            estudiantes.push(estudiante);
+        }
         localStorage.setItem("estudiantes", JSON.stringify(estudiantes));
 
-        mensajeError.textContent = "Estudiante guardado correctamente.";
-        formAlta.reset();
+        //Para que redirija a la página de gestión de estudiantes cuando se edita
+        if (indiceEditar !== null) {
+            alert("Estudiante actualizado correctamente.");
+            window.location.href = "registro_estudiantes.html";
+        } else {
+            mensajeError.textContent = "Estudiante guardado correctamente.";
+            formAlta.reset();            
+        }
+
+        
     });
 }

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta de Materias - Instituto San Agustín</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <a href="../index.html">
+            <img src="../img/logo_gorro.png" alt="Logo Instituto San Agustín" class="logo-img">
+            </a>
+            <div class="institution-title">
+                <h1>Instituto San Agustín</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="mensajes.html">Mensajes</a></li>
+                <li><a href="perfil.html">Tu Perfil</a></li>
+                <li><a href="../index.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <aside>
+            <h3>ADMINISTRACIÓN +</h3>
+            <ul>
+                <li><a href="panel_administracion.html">Inicio</a></li>
+                <li><a href="registro_estudiantes.html">Gestión de Estudiantes</a></li>
+                <li><a href="registro_profesores.html">Gestión de Profesores</a></li>
+                <li><a href="registro_materias.html">Gestión de Materias</a></li>
+                <li><a href="carga_notas.html">Calificaciones</a></li>
+                <li><a href="alta_estudiantes.html">Alta de estudiantes</a></li>
+                <li><a href="alta_profesor.html">Alta de profesor</a></li>
+                <li><a href="alta_materias.html" class="active">Alta de materia</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <div class="card">
+                <h2 id="titulo-altamat">ALTA DE MATERIAS</h2>
+                
+                <form id="form-altamat" action="#" method="POST" class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="codigo">Código</label>
+                        <input type="text" id="codigo" class="input-rounded" placeholder="Ej: MAT-123">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="asignatura">Asignatura</label>
+                        <input type="text" id="asignatura" class="input-rounded" >
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="anio">Año</label>
+                        <select id="anio" class="input-rounded">                            
+                            <option value="1">1° Año</option>
+                            <option value="2">2° Año</option>
+                            <option value="3">3° Año</option>
+                            <option value="4">4° Año</option>                            
+                        </select>
+                    </div>
+
+                    <fieldset class="form-group full-width">
+                        <legend>Días y horarios (elegí entre 1 y 4):</legend>
+                        
+                        <div class="fila-horario">
+                            <label>
+                                <input type="checkbox" name="dia" value="Lunes"> Lunes
+                            </label>
+                            <select class="input-rounded">
+                                <option value="">Elegí un horario</option>
+                                <option value="08:00 a 10:00">08:00 a 10:00</option>
+                                <option value="10:00 a 12:00">10:00 a 12:00</option>
+                                <option value="14:00 a 16:00">14:00 a 16:00</option>
+                                <option value="16:00 a 18:00">16:00 a 18:00</option>
+                                <option value="18:00 a 20:00">18:00 a 20:00</option>                                
+                            </select>
+                        </div>
+                        <div class="fila-horario">
+                            <label>
+                                <input type="checkbox" name="dia" value="Martes"> Martes
+                            </label>
+                            <select class="input-rounded">
+                                <option value="">Elegí un horario</option>
+                                <option value="08:00 a 10:00">08:00 a 10:00</option>
+                                <option value="10:00 a 12:00">10:00 a 12:00</option>
+                                <option value="14:00 a 16:00">14:00 a 16:00</option>
+                                <option value="16:00 a 18:00">16:00 a 18:00</option>
+                                <option value="18:00 a 20:00">18:00 a 20:00</option>                                
+                            </select>
+                        </div>
+                        <div class="fila-horario">
+                            <label>
+                                <input type="checkbox" name="dia" value="Miercoles"> Miércoles
+                            </label>
+                            <select class="input-rounded">
+                                <option value="">Elegí un horario</option>
+                                <option value="08:00 a 10:00">08:00 a 10:00</option>
+                                <option value="10:00 a 12:00">10:00 a 12:00</option>
+                                <option value="14:00 a 16:00">14:00 a 16:00</option>
+                                <option value="16:00 a 18:00">16:00 a 18:00</option>
+                                <option value="18:00 a 20:00">18:00 a 20:00</option>                                
+                            </select>
+                        </div>
+                        <div class="fila-horario">
+                            <label>
+                                <input type="checkbox" name="dia" value="Jueves"> Jueves
+                            </label>
+                            <select class="input-rounded">
+                                <option value="">Elegí un horario</option>
+                                <option value="08:00 a 10:00">08:00 a 10:00</option>
+                                <option value="10:00 a 12:00">10:00 a 12:00</option>
+                                <option value="14:00 a 16:00">14:00 a 16:00</option>
+                                <option value="16:00 a 18:00">16:00 a 18:00</option>
+                                <option value="18:00 a 20:00">18:00 a 20:00</option>                                
+                            </select>
+                        </div>
+                        <div class="fila-horario">
+                            <label>
+                                <input type="checkbox" name="dia" value="Viernes"> Viernes
+                            </label>
+                            <select class="input-rounded">
+                                <option value="">Elegí un horario</option>
+                                <option value="08:00 a 10:00">08:00 a 10:00</option>
+                                <option value="10:00 a 12:00">10:00 a 12:00</option>
+                                <option value="14:00 a 16:00">14:00 a 16:00</option>
+                                <option value="16:00 a 18:00">16:00 a 18:00</option>
+                                <option value="18:00 a 20:00">18:00 a 20:00</option>                                
+                            </select>
+                        </div>
+                        <div class="fila-horario">
+                            <label>
+                                <input type="checkbox" name="dia" value="Sabado"> Sábado
+                            </label>
+                            <select class="input-rounded">
+                                <option value="">Elegí un horario</option>
+                                <option value="08:00 a 10:00">08:00 a 10:00</option>
+                                <option value="10:00 a 12:00">10:00 a 12:00</option>
+                                <option value="14:00 a 16:00">14:00 a 16:00</option>
+                                <option value="16:00 a 18:00">16:00 a 18:00</option>
+                                <option value="18:00 a 20:00">18:00 a 20:00</option>                                
+                            </select>
+                        </div>        
+                    </fieldset>
+
+                    <div class="form-group full-width">
+                        <label for="profesor">Profesor a cargo:</label>
+                        <select id="profesor" class="input-rounded"></select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="duracion">Duración</label>
+                        <select id="duracion" class="input-rounded">                            
+                            <option value="Cuatrimestral">Cuatrimestral</option>
+                            <option value="Anual">Anual</option>                            
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="lectivo">Año lectivo</label>
+                        <input type="text" id="lectivo" class="input-rounded" placeholder="Ej: 2026">
+                    </div>
+
+                    <div class="form-group full-width" >
+                        <p id="mensaje-error" class="mensaje-error"></p>
+                        <button type="submit" id="btn-guardar" class="btn">Guardar Materia</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Instituto San Agustín. Todos los derechos reservados.</p>
+        <p class="creditos">
+            Logo: imagen de <a href="https://www.freepik.com" target="_blank"
+        rel="noopener"> Magnific (ex Freepik)</a>
+        </p>
+    </footer>
+    <script src="../js/validacion_alta_materias.js"></script>
+
+</body>
+</html>

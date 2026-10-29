@@ -32,14 +32,17 @@
             <ul>
                 <li><a href="panel_administracion.html">Inicio</a></li>
                 <li><a href="registro_estudiantes.html">Gestión de Estudiantes</a></li>
+                <li><a href="registro_materias.html">Gestión de Materias</a></li>
                 <li><a href="carga_notas.html">Calificaciones</a></li>
                 <li><a href="alta_estudiantes.html" class="active">Alta de estudiantes</a></li>
+                <li><a href="alta_profesor.html">Alta de profesor</a></li>
+                <li><a href="alta_materias.html">Alta de materia</a></li>
             </ul>
         </aside>
 
         <main>
             <div class="card">
-                <h2 >ALTA DE ESTUDIANTES</h2>
+                <h2 id="titulo-alta">ALTA DE ESTUDIANTES</h2>
                 
                 <form id="form-alta" action="#" method="POST" class="form-grid">
                     <div class="form-group full-width">
@@ -88,7 +91,7 @@
 
                     <div class="form-group full-width" >
                         <p id="mensaje-error" class="mensaje-error"></p>
-                        <button type="submit" class="btn">Guardar Estudiante</button>
+                        <button type="submit" id="btn-guardar" class="btn">Guardar Estudiante</button>
                     </div>
                 </form>
             </div>

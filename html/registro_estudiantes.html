@@ -32,8 +32,12 @@
             <ul>
                 <li><a href="panel_administracion.html">Inicio</a></li>
                 <li><a href="registro_estudiantes.html" class="active">Gestión de Estudiantes</a></li>
+                <li><a href="registro_profesores.html">Gestión de Profesores</a></li>
+                <li><a href="registro_materias.html">Gestión de Materias</a></li>
                 <li><a href="carga_notas.html">Calificaciones</a></li>
                 <li><a href="alta_estudiantes.html">Alta de estudiantes</a></li>
+                <li><a href="alta_profesor.html">Alta de profesor</a></li>
+                <li><a href="alta_materias.html">Alta de materia</a></li>
             </ul>
         </aside>
 
@@ -55,48 +59,17 @@
                             <tr>
                                 <th>DNI</th>
                                 <th>Estudiante</th>
-                                <th>Materia</th>
-                                <th>Nota 1</th>
-                                <th>Nota 2</th>
-                                <th>Nota 3</th>
-                                <th>Promedio</th>
+                                <th>Fecha de Nacimiento</th>
+                                <th>Lugar de Nacimiento</th>
+                                <th>Dirección</th>
+                                <th>Teléfono</th>
+                                <th>Contacto de urgencias</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>12345678</td>
-                                <td>Gómez, María</td>
-                                <td>Programación Frontend</td>
-                                <td>8.00</td>
-                                <td>9.00</td>
-                                <td>10.00</td>
-                                <td><strong>9.00</strong></td>
-                                <td>
-                                    <button >Editar</button>
-                                    <button >Eliminar</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>87654321</td>
-                                <td>Pérez, Juan</td>
-                                <td>Base de Datos</td>
-                                <td>6.00</td>
-                                <td>7.00</td>
-                                <td>5.00</td>
-                                <td><strong>6.00</strong></td>
-                                <td>
-                                    <button >Editar</button>
-                                    <button >Eliminar</button>
-                                </td>
-                            </tr>
+                        <tbody id="tabla_estudiantes">
+                            
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="6" ><strong>Promedio General de la Materia:</strong></td>
-                                <td colspan="2"><strong>7.50</strong></td>
-                            </tr>
-                        </tfoot>
                     </table>
                 </div>
             </div>
@@ -110,6 +83,9 @@
         rel="noopener"> Magnific (ex Freepik)</a>
         </p>
     </footer>
+    <script 
+        src="../js/registro_estudiantes.js">
+    </script>
 
 </body>
 </html>

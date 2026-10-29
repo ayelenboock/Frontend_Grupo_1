@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta de Profesores - Instituto San Agustín</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <a href="../index.html">
+            <img src="../img/logo_gorro.png" alt="Logo Instituto San Agustín" class="logo-img">
+            </a>
+            <div class="institution-title">
+                <h1>Instituto San Agustín</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="mensajes.html">Mensajes</a></li>
+                <li><a href="perfil.html">Tu Perfil</a></li>
+                <li><a href="../index.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <aside>
+            <h3>ADMINISTRACIÓN +</h3>
+            <ul>
+                <li><a href="panel_administracion.html">Inicio</a></li>
+                <li><a href="registro_estudiantes.html">Gestión de Estudiantes</a></li>
+                <li><a href="registro_profesores.html">Gestión de Profesores</a></li>
+                <li><a href="registro_materias.html">Gestión de Materias</a></li>
+                <li><a href="carga_notas.html">Calificaciones</a></li>
+                <li><a href="alta_estudiantes.html">Alta de estudiantes</a></li>
+                <li><a href="alta_profesor.html" class="active">Alta de profesor</a></li>
+                <li><a href="alta_materias.html">Alta de materia</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <div class="card">
+                <h2 id="titulo-altapr">ALTA DE PROFESORES</h2>
+                
+                <form id="form-altapr" action="#" method="POST" class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="apellido">Apellido/s:</label>
+                        <input type="text" id="apellido" class="input-rounded" >
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="nombre">Nombre/s:</label>
+                        <input type="text" id="nombre" class="input-rounded" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dni">DNI:</label>
+                        <input type="text" id="dni" class="input-rounded" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cuil">CUIL:</label>
+                        <input type="text" id="cuil" class="input-rounded" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaNac">Fecha de Nacimiento:</label>
+                        <input type="date" id="fechaNac" class="input-rounded" >
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="lugarNac">Lugar de Nacimiento:</label>
+                        <input type="text" id="lugarNac" class="input-rounded">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" id="direccion" class="input-rounded">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" class="input-rounded">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="titulo">Título obtenido</label>
+                        <input type="text" id="titulo" class="input-rounded">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="institucion">Institución que lo avala</label>
+                        <input type="text" id="institucion" class="input-rounded">
+                    </div>
+
+                    <div class="form-group full-width" >
+                        <p id="mensaje-error" class="mensaje-error"></p>
+                        <button type="submit" id="btn-guardar" class="btn">Guardar Profesor</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Instituto San Agustín. Todos los derechos reservados.</p>
+        <p class="creditos">
+            Logo: imagen de <a href="https://www.freepik.com" target="_blank"
+        rel="noopener"> Magnific (ex Freepik)</a>
+        </p>
+    </footer>
+    <script src="../js/validacion_alta_profesores.js"></script>
+
+</body>
+</html>
