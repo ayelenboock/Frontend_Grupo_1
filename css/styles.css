@@ -275,6 +275,12 @@ fieldset legend {
   padding: 0 0.5rem;
 }
 
+/*Campos de solo lectura*/
+.input-rounded[readonly] {
+  background-color: #f0e6f6;
+  cursor: not-allowed;
+}
+
 footer {
   text-align: center;
   padding: 1rem;

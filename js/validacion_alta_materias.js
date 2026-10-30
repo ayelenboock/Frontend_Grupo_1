@@ -2,9 +2,10 @@
 const formAlta = document.getElementById("form-altamat");
 
 if (formAlta) {
+    const selectCarrera = document.getElementById("carrera");
     const inputCodigo = document.getElementById("codigo");
     const inputAsignatura = document.getElementById("asignatura");
-    const selectAnio = document.getElementById("anio");    
+    const selectAnio = document.getElementById("anio");        
     const selectProfesor = document.getElementById("profesor");
     const selectDuracion = document.getElementById("duracion");
     const inputLectivo = document.getElementById("lectivo");
@@ -31,6 +32,26 @@ if (formAlta) {
         selectProfesor.appendChild(opcion);
     });
 
+    //SELECT con carreras guardadas:
+    const carreras = JSON.parse(localStorage.getItem("carreras")) || [];
+
+    const opcionInicialCarrera = document.createElement("option");
+    opcionInicialCarrera.value = "";
+
+    if (carreras.length === 0) {
+        opcionInicialCarrera.textContent = "No hay carreras cargadas";
+    } else {
+        opcionInicialCarrera.textContent = "Seleccioná una carrera";
+    }
+
+    selectCarrera.appendChild(opcionInicialCarrera);
+
+    carreras.forEach(function (carrera) {
+        const opcion = document.createElement("option");
+        opcion.value = carrera.codigo;
+        opcion.textContent = carrera.nombre;
+        selectCarrera.appendChild(opcion);
+    });
 
     //Para cuando se edita, si la dirección trae ?indice= se edita una materia existente
     const parametros = new URLSearchParams(window.location.search);
@@ -45,6 +66,7 @@ if (formAlta) {
             inputCodigo.value = materia.codigo;
             inputAsignatura.value = materia.asignatura;
             selectAnio.value = materia.anio;
+            selectCarrera.value = materia.carreraCodigo;
             selectProfesor.value = materia.profesorCuil;
             selectDuracion.value = materia.duracion;
             inputLectivo.value = materia.lectivo;
@@ -69,11 +91,12 @@ if (formAlta) {
         const codigo = inputCodigo.value.trim().toUpperCase();
         const asignatura = inputAsignatura.value.trim();
         const anio = selectAnio.value.trim();
+        const carreraCodigo = selectCarrera.value;
         const profesorCuil = selectProfesor.value.trim();
         const duracion = selectDuracion.value.trim();
         const lectivo = inputLectivo.value.trim();      
 
-        if (codigo === "" || asignatura === "" || anio === "" || profesorCuil === "" || lectivo === "") {
+        if (codigo === "" || asignatura === "" || anio === "" || carreraCodigo === "" || profesorCuil === "" || lectivo === "") {
             mensajeError.textContent = "Los campos son obligatorios, no deben estar vacíos.";
             return;
         }
@@ -115,6 +138,7 @@ if (formAlta) {
             codigo: codigo,
             asignatura: asignatura,
             anio: anio,
+            carreraCodigo: carreraCodigo,
             horarios: horarios,
             profesorCuil: profesorCuil,
             duracion: duracion,
