@@ -31,12 +31,10 @@
             <h3>ADMINISTRACIÓN +</h3>
             <ul>
                 <li><a href="panel_administracion.html">Inicio</a></li>
-                <li><a href="registro_carreras.html">Gestión de Carreras</a></li>
                 <li><a href="registro_estudiantes.html">Gestión de Estudiantes</a></li>
                 <li><a href="registro_profesores.html">Gestión de Profesores</a></li>
                 <li><a href="registro_materias.html" class="active">Gestión de Materias</a></li>
                 <li><a href="carga_notas.html">Calificaciones</a></li>
-                <li><a href="alta_carreras.html">Alta de carrera</a></li>
                 <li><a href="alta_estudiantes.html">Alta de estudiantes</a></li>
                 <li><a href="alta_profesor.html">Alta de profesor</a></li>
                 <li><a href="alta_materias.html">Alta de materia</a></li>
@@ -49,8 +47,8 @@
                 <p style="margin-bottom: 1rem;">Consulta, edición, eliminación y asignación de materias.</p>
 
                 <!-- Sección de Búsqueda -->
-                <form id="form-busqueda" class="search-bar" action="#" method="GET">
-                    <input type="text" id="input-busqueda" class="input-rounded" placeholder="Buscar materia por Asignatura">
+                <form class="search-bar" action="#" method="GET">
+                    <input type="text" class="input-rounded" placeholder="Buscar materia por Asignatura">
                     <button type="submit" class="btn">Buscar</button>
                 </form>
 
@@ -61,7 +59,6 @@
                             <tr>
                                 <th>Código</th>
                                 <th>Asignatura</th>
-                                <th>Carrera</th>
                                 <th>Año</th>
                                 <th>Horarios</th>
                                 <th>Profesor a cargo</th>
