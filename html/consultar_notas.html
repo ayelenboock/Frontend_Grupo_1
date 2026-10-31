@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de Notas - Instituto San Agustín</title>
+    <title>Consulta de Calificaciones - Instituto San Agustín</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -30,54 +30,51 @@
         <aside>
             <h3>ADMINISTRACIÓN +</h3>
             <ul>
-                <li><a href="panel_profesor.html">Inicio</a></li>
-                <li><a href="carga_notas.html" class="active">Carga de notas</a></li>
-                <li><a href="carga_asistencias.html">Carga de asistencias</a></li>
-                <li><a href="registro_estudiantes.html">Listado de estudiantes</a></li>
-                <li><a href="#">Mesas de examen</a></li><!--FALTA HACER PÁGINA-->
+                <li><a href="panel_administracion.html">Inicio</a></li>
+                <li><a href="registro_estudiantes.html">Gestión de Estudiantes</a></li>
+                <li><a href="registro_profesores.html">Gestión de Profesores</a></li>
+                <li><a href="registro_materias.html">Gestión de Materias</a></li>
+                <li><a href="consultar_notas.html" class="active">Consulta de Calificaciones</a></li> 
+                <li><a href="alta_estudiantes.html">Alta de estudiantes</a></li>
+                <li><a href="alta_profesor.html">Alta de profesores</a></li>
+                <li><a href="alta_materias.html">Alta de materia</a></li>                
             </ul>
         </aside>
 
         <main>
             <div class="card">
-                <h2>CARGA DE NOTAS</h2>
-                <div >
-                    <label><strong>Seleccionar Materia:</strong>
-                        <select class="input-rounded" >
-                            <option>Programación Frontend</option>
-                            <option>Base de Datos</option>
-                        </select>
-                    </label>
-                    <button class="btn">Actualizar</button>
-                </div>
+                <h2>CALIFICACIONES POR ESTUDIANTE</h2>
+                <p style="margin-bottom: 1rem;"></p>
 
+                <!-- Sección de Búsqueda -->
+                <form id="form-lista" class="search-bar search-bar-columna" action="#" method="GET">
+                    <input id="input-buscar" type="text" class="input-rounded" placeholder="Buscar estudiante por Apellido">
+                    <select id="filtro-materia" class="input-rounded"></select>                                    
+                </form>
+
+                <!-- Tabla de Gestión General -->
                 <div class="table-container">
                     <table>
                         <thead>
                             <tr>
+                                <th>DNI</th>
                                 <th>Estudiante</th>
-                                <th>NOTA 1</th>
-                                <th>NOTA 2</th>
-                                <th>NOTA 3</th>
-                                <th>PROMEDIO</th>
+                                <th>Materia</th>
+                                <th>Nota 1</th>
+                                <th>Nota 2</th>
+                                <th>Nota 3</th>
+                                <th>Promedio</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Estudiante 1</td>
-                                <td><input type="number" min="1" max="10" ></td>
-                                <td><input type="number" min="1" max="10" ></td>
-                                <td><input type="number" min="1" max="10" ></td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Estudiante 2</td>
-                                <td><input type="number" min="1" max="10" ></td>
-                                <td><input type="number" min="1" max="10" ></td>
-                                <td><input type="number" min="1" max="10" ></td>
-                                <td>-</td>
-                            </tr>
+                        <tbody id="tabla_listado">
+                            
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6" ><strong>Promedio General de la Materia:</strong></td>
+                                <td id="promedio-general"><strong>-</strong></td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>
@@ -91,6 +88,9 @@
         rel="noopener"> Magnific (ex Freepik)</a>
         </p>
     </footer>
+    <script 
+        src="../js/listado_estudiantes.js">
+    </script>
 
 </body>
 </html>

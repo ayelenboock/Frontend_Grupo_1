@@ -28,58 +28,43 @@
 
     <div class="dashboard-container">
         <aside>
-            <h3>ADMINISTRACIÓN +</h3>
+            <h3>MENÚ +</h3>
             <ul>
                 <li><a href="panel_profesor.html">Inicio</a></li>
                 <li><a href="carga_notas.html" class="active">Carga de notas</a></li>
                 <li><a href="carga_asistencias.html">Carga de asistencias</a></li>
-                <li><a href="registro_estudiantes.html">Listado de estudiantes</a></li>
-                <li><a href="#">Mesas de examen</a></li><!--FALTA HACER PÁGINA-->
+                <li><a href="listado_estudiantes.html">Listado de estudiantes</a></li>
+                <li><a href="#">Mesas de examen</a></li>
             </ul>
-        </aside>
+        </aside>        
 
         <main>
             <div class="card">
                 <h2>CARGA DE NOTAS</h2>
-                <div >
-                    <label><strong>Seleccionar Materia:</strong>
-                        <select class="input-rounded" >
-                            <option>Programación Frontend</option>
-                            <option>Base de Datos</option>
-                        </select>
-                    </label>
-                    <button class="btn">Actualizar</button>
+        
+                <div class="form-group">
+                    <label for="materia">Seleccionar materia:</label>
+                    <select id="materia" class="input-rounded"></select>
                 </div>
-
+        
                 <div class="table-container">
                     <table>
                         <thead>
                             <tr>
                                 <th>Estudiante</th>
-                                <th>NOTA 1</th>
-                                <th>NOTA 2</th>
-                                <th>NOTA 3</th>
-                                <th>PROMEDIO</th>
+                                <th>Nota 1</th>
+                                <th>Nota 2</th>
+                                <th>Nota 3</th>
+                                <th>Promedio</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Estudiante 1</td>
-                                <td><input type="number" min="1" max="10" ></td>
-                                <td><input type="number" min="1" max="10" ></td>
-                                <td><input type="number" min="1" max="10" ></td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Estudiante 2</td>
-                                <td><input type="number" min="1" max="10" ></td>
-                                <td><input type="number" min="1" max="10" ></td>
-                                <td><input type="number" min="1" max="10" ></td>
-                                <td>-</td>
-                            </tr>
+                        <tbody id="tabla_notas">
                         </tbody>
                     </table>
                 </div>
+        
+                <p id="mensaje-notas" class="mensaje-error"></p>
+                <button type="button" id="btn-guardar-notas" class="btn">Guardar notas</button>
             </div>
         </main>
     </div>
@@ -91,6 +76,9 @@
         rel="noopener"> Magnific (ex Freepik)</a>
         </p>
     </footer>
+    <script
+        src="../js/carga_notas.js">
+    </script>
 
 </body>
 </html>

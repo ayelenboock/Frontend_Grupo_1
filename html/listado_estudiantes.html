@@ -44,8 +44,9 @@
                 <p style="margin-bottom: 1rem;"></p>
 
                 <!-- Sección de Búsqueda -->
-                <form id="form-lista" class="search-bar" action="#" method="GET">
+                <form id="form-lista" class="search-bar search-bar-columna" action="#" method="GET">
                     <input id="input-buscar" type="text" class="input-rounded" placeholder="Buscar estudiante por Apellido">
+                    <select id="filtro-materia" class="input-rounded"></select>
                 </form>
 
                 <!-- Tabla de Gestión General -->
@@ -68,7 +69,7 @@
                         <tfoot>
                             <tr>
                                 <td colspan="6" ><strong>Promedio General de la Materia:</strong></td>
-                                <td colspan="2"><strong> - </strong></td>
+                                <td id="promedio-general"><strong>-</strong></td>
                             </tr>
                         </tfoot>
                     </table>

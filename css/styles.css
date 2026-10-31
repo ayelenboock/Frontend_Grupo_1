@@ -220,6 +220,12 @@ th, td {
   text-align: center;
 }
 
+/* Opciones de asistencia dentro de la tabla */
+td label {
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
 th {
   background-color: #4a148c;
   color: white;
@@ -248,6 +254,11 @@ tr:nth-child(even) {
 
 .search-bar input {
   flex: 1;
+}
+
+/*Separar los buscadores de listado estudiantes y consultar notas*/
+.search-bar-columna {
+  flex-direction: column;
 }
 
 /* Filas de días y horarios en el alta de materias */
