@@ -73,7 +73,7 @@ if (formAlta) {
 
             //Marcar los días guardados y elegir un horario
             materia.horarios.forEach(function (h) {
-                const casilla = document.querySelector('input[name="dia"] [value= "' + h.dia + '"]');
+                const casilla = document.querySelector('input[name="dia"][value="' + h.dia + '"]');
                 if (casilla) {
                     casilla.checked = true;
                     const fila = casilla.closest(".fila-horario");
