@@ -1,22 +1,37 @@
-//Guardar el alta de estudiantes en la tabla, editar y eliminar estudiantes
+//Muestra alta de estudiantes en la tabla, buscar, editar y eliminar estudiantes
 
 const cuerpoTabla = document.getElementById("tabla_estudiantes");
+const formBusqueda = document.getElementById("form-busqueda");
+const inputBusqueda = document.getElementById("input-busqueda");
+
+//Agrega fila con un mensaje que ocupa toda la tabla:
+function mostrarMensaje(texto) {
+    const fila = document.createElement("tr");
+    const celda = document.createElement("td");
+    celda.textContent = texto;
+    celda.colSpan = 8;
+    fila.appendChild(celda);
+    cuerpoTabla.appendChild(fila);
+}
 
 function mostrarEstudiantes() {
     if (cuerpoTabla) {
         cuerpoTabla.innerHTML = "";
         const estudiantes = JSON.parse(localStorage.getItem("estudiantes")) || [];
+        const textoBuscado = inputBusqueda.value.trim().toLowerCase();
+        let mostrados = 0;
 
         if (estudiantes.length === 0) {
-            const fila = document.createElement("tr");
-            const celda = document.createElement("td");
-            celda.textContent = "No hay estudiantes cargados.";
-            celda.colSpan = 6;
-            fila.appendChild(celda);
-            cuerpoTabla.appendChild(fila);
+            mostrarMensaje("No hay estudiantes cargados.");
+            return;
         }
 
         estudiantes.forEach(function (estudiante, indice) {
+            if (!estudiante.apellido.toLowerCase().includes(textoBuscado)) {
+                return;
+            }
+            mostrados++;
+
             const fila = document.createElement("tr");
 
             const datos = [
@@ -51,10 +66,14 @@ function mostrarEstudiantes() {
 
             celdaAcciones.appendChild(botonEditar);
             celdaAcciones.appendChild(botonEliminar);
-            fila.appendChild(celdaAcciones)
+            fila.appendChild(celdaAcciones);
 
             cuerpoTabla.appendChild(fila);
         });
+
+        if (mostrados === 0) {
+            mostrarMensaje("No se encontraron estudiantes con ese apellido.");
+        }
     }
 }
 
@@ -69,5 +88,11 @@ function eliminarEstudiante(indice) {
     localStorage.setItem("estudiantes", JSON.stringify(estudiantes));
     mostrarEstudiantes();    
 }
+
+//Buscar por apellido:
+formBusqueda.addEventListener("submit", function (event) {
+    event.preventDefault();
+    mostrarEstudiantes();
+});
 
 mostrarEstudiantes();

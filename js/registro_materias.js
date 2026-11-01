@@ -1,23 +1,41 @@
 //Muestra materias en la tabla, editar y eliminar materias
 
 const cuerpoTabla = document.getElementById("tabla_materias");
+const formBusqueda = document.getElementById("form-busqueda");
+const inputBusqueda = document.getElementById("input-busqueda");
+
+//Agrega fila con un mensaje que ocupa toda la tabla:
+function mostrarMensaje(texto) {
+    const fila = document.createElement("tr");
+    const celda = document.createElement("td");
+    celda.textContent = texto;
+    celda.colSpan = 9;
+    fila.appendChild(celda);
+    cuerpoTabla.appendChild(fila);
+}
 
 function mostrarMaterias() {
     const profesores = JSON.parse(localStorage.getItem("profesores")) || [];
+    const carreras = JSON.parse(localStorage.getItem("carreras")) || [];
+    
     if (cuerpoTabla) {
         cuerpoTabla.innerHTML = "";
         const materias = JSON.parse(localStorage.getItem("materias")) || [];
+        const textoBuscado = inputBusqueda.value.trim().toLowerCase();
+        let mostrados = 0;
 
         if (materias.length === 0) {
-            const fila = document.createElement("tr");
-            const celda = document.createElement("td");
-            celda.textContent = "No hay materias cargadas.";
-            celda.colSpan = 8;
-            fila.appendChild(celda);
-            cuerpoTabla.appendChild(fila);
+            mostrarMensaje("No hay materias cargadas.");
+            return;
         }
 
         materias.forEach(function (materia, indice) {
+            //si la asignatura no coincide con la búsqueda se saltea esta materia:
+            if (!materia.asignatura.toLowerCase().includes(textoBuscado)) {
+                return;
+            }
+            mostrados++;
+
             const fila = document.createElement("tr");
 
             const textoHorarios = materia.horarios.map(function (h) {
@@ -33,9 +51,19 @@ function mostrarMaterias() {
                 nombreProfesor = profesor.apellido + ", " + profesor.nombre;
             }
 
+            const carrera = carreras.find(function (c) {
+                return c.codigo === materia.carreraCodigo;
+            });
+
+            let nombreCarrera = "Sin carrera";
+            if (carrera) {
+                nombreCarrera = carrera.nombre;
+            }
+
             const datos = [
                 materia.codigo,
                 materia.asignatura,
+                nombreCarrera,
                 materia.anio + "°",
                 textoHorarios,                
                 nombreProfesor,
@@ -69,6 +97,10 @@ function mostrarMaterias() {
 
             cuerpoTabla.appendChild(fila);
         });
+
+        if (mostrados === 0) {
+            mostrarMensaje("No se encontraron materias con esa denominación.");
+        }
     }
 }
 
@@ -84,5 +116,11 @@ function eliminarMateria(indice) {
     
     mostrarMaterias();
 }
+
+//Buscar por asignatura
+formBusqueda.addEventListener("submit", function (event) {
+    event.preventDefault();
+    mostrarMaterias();
+});
 
 mostrarMaterias();
