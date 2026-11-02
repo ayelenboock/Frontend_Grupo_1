@@ -1,6 +1,3 @@
-//Prueba de que las rutas están conectadas:
-// console.log("Bienvenidos");
-
 //Validación para que los campos usuario y contraseña no estén vacíos
 const formLogin = document.getElementById("form-login");
 
