@@ -18,9 +18,7 @@
             </div>
         </div>
         <nav>
-            <ul>
-                <li><a href="mensajes.html">Mensajes</a></li>
-                <li><a href="perfil.html">Tu Perfil</a></li>
+            <ul>                
                 <li><a href="../index.html">Cerrar Sesión</a></li>
             </ul>
         </nav>
@@ -28,23 +26,26 @@
 
     <div class="dashboard-container">
         <aside>
-            <h3>ADMINISTRACIÓN +</h3>
+            <h3>MENÚ +</h3>
             <ul>
                 <li><a href="panel_profesor.html">Inicio</a></li>
                 <li><a href="carga_notas.html">Carga de notas</a></li>
                 <li><a href="carga_asistencias.html" class="active">Carga de asistencias</a></li>
-                <li><a href="registro_estudiantes.html">Listado de estudiantes</a></li>
-                <li><a href="#">Mesas de examen</a></li> <!-- Hacer página -->
+                <li><a href="listado_estudiantes.html">Listado de estudiantes</a></li>                
             </ul>
         </aside>
 
         <main>
             <div class="card">
                 <h2>CARGA DE ASISTENCIAS</h2>
-                <div>
-                    <label>Fecha a cargar: <input type="date" class="input-rounded" ></label>
-                    <button class="btn">Actualizar</button>
-                </div>
+                <div class="form-group">
+                    <label for="materia">Seleccionar materia:</label>
+                    <select id="materia" class="input-rounded"></select>
+                </div> 
+                <div class="form-group">
+                    <label for="fecha">Fecha a cargar:</label>
+                    <input type="date" id="fecha" class="input-rounded">
+                </div>             
 
                 <div class="table-container">
                     <table>
@@ -53,25 +54,13 @@
                                 <th>Estudiante</th>
                                 <th>ASISTENCIA</th>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Estudiante 1</td>
-                                <td>
-                                    <label><input type="radio" name="ast1" value="P"> Presente</label>
-                                    <label ><input type="radio" name="ast1" value="A"> Ausente</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Estudiante 2</td>
-                                <td>
-                                    <label><input type="radio" name="ast2" value="P"> Presente</label>
-                                    <label ><input type="radio" name="ast2" value="A"> Ausente</label>
-                                </td>
-                            </tr>
-                        </tbody>
+                        </thead>    
+                        <tbody id="tabla_asistencia"></tbody>
+                        
                     </table>
                 </div>
+                <p id="mensaje-asistencia" class="mensaje-error"></p>
+                <button type="button" id="btn-guardar-asistencia" class="btn">Guardar asistencia</button>
             </div>
         </main>
     </div>
@@ -83,6 +72,9 @@
         rel="noopener"> Magnific (ex Freepik)</a>
         </p>
     </footer>
+    <script
+        src="../js/carga_asistencias.js">
+    </script>
 
 </body>
 </html>
